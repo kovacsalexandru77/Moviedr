@@ -160,6 +160,7 @@
   <!-- VERTICAL TEXT -->
   <div class="vertical-text">OnlineFilmek Sᴀɴᴅᴜ▶</div>
 
+
   <!-- CLOCK -->
   <div class="clock" id="clock"></div>
   <div class="carousel-wrapper">
@@ -186,7 +187,7 @@
     <div class="slide"><img src="https://image.tmdb.org/t/p/original/wvcIONukapypq7cAF7s0IFfWOK1.jpg" alt="Film 17"></div>
     <div class="slide"><img src="https://image.tmdb.org/t/p/original/mU9jwhggx117R6Ck6tgBIkXhu5P.jpg" alt="Film 18"></div>
   </div>
-  </div>
+</div>
 
   <!-- Iframe page -->
   <iframe src="https://moviedrive.hu/filmek/" allowfullscreen></iframe>
@@ -198,6 +199,8 @@
       const minutes = now.getMinutes().toString().padStart(2, '0');
       document.getElementById('clock').textContent = `${hours}:${minutes}`;
     }
+    setInterval(updateClock, 1000);
+    updateClock();
     const track = document.getElementById('carouselTrack');
 let direction = 'right';
 let speed = 40;
@@ -209,8 +212,6 @@ function changeDirection(dir) {
   track.style.animation = `scroll ${speed}s linear infinite`;
   track.style.animationDirection = dir === 'left' ? 'reverse' : 'normal';
 }
-    setInterval(updateClock, 1000);
-    updateClock();
   </script>
 </body>
 </html>
